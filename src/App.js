@@ -51,16 +51,17 @@ export default function WaitlistForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
-  
+
+    // Prepare the data for submission
     const formDataToSend = {
       ...formData,
       propertyTypes: formData.propertyTypes.join(', '),
       states: formData.states.join(', ')
     };
-  
+
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbwZurBnvHR4T9t3MPQb6WX6CxI1ufprky840X4PwaYpAeZ3a_339mx3IQJA9tHUVxTfcg/exec',
+        'https://script.google.com/macros/s/AKfycbzPag8uO8VNw2AGASokKbzzDHjW_XQjlWYNhVeIZqn0273ZnwiifC1u6SAIW--pPDjGag/exec',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -81,7 +82,6 @@ export default function WaitlistForm() {
       setIsSubmitting(false);
     }
   };
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#e1672d' }}>
