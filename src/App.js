@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
+import stylesheet from '././App.css';
 
 const propertyTypes = [
   'Office', 'Retail', 'Industrial', 'Multifamily', 'Hotel', 'Mixed Use', 'Special Purpose', 'Other'
@@ -51,17 +52,16 @@ export default function WaitlistForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
-
-    // Prepare the data for submission
+  
     const formDataToSend = {
       ...formData,
       propertyTypes: formData.propertyTypes.join(', '),
       states: formData.states.join(', ')
     };
-
+  
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbzPag8uO8VNw2AGASokKbzzDHjW_XQjlWYNhVeIZqn0273ZnwiifC1u6SAIW--pPDjGag/exec',
+        'https://script.google.com/macros/s/AKfycbwWbK9yZuOEH6cba13O27kVVM6OGWBFFpTFWLQUiVVCbATxIg95ADin1kB-VcRhlY6JTQ/exec',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -82,12 +82,13 @@ export default function WaitlistForm() {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#e1672d' }}>
       <div className="max-w-md w-full space-y-8 bg-white p-6 sm:p-8 rounded-xl shadow-2xl">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Join Our Exclusive Waitlist</h2>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Join Our2 Exclusive Waitlist</h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Be among the first to access CreFund's AI-Powered CRE Refinancing Platform
           </p>
@@ -251,3 +252,4 @@ export default function WaitlistForm() {
     </div>
   );
 }
+
