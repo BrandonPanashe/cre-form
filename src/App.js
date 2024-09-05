@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
-import stylesheet from '././App.css';
+
 
 const propertyTypes = [
   'Office', 'Retail', 'Industrial', 'Multifamily', 'Hotel', 'Mixed Use', 'Special Purpose', 'Other'
